@@ -24,8 +24,8 @@ public class Lotto {
 
     public Rank match(int bonusNumber, List<Integer> winningNumbers) {
         int matchCount = 0;
-        for (int number: numbers) {
-            if(winningNumbers.contains(number)) {
+        for (int number : numbers) {
+            if (winningNumbers.contains(number)) {
                 matchCount++;
             }
         }
@@ -48,7 +48,7 @@ public class Lotto {
     }
 
     private void validateRange(List<Integer> numbers) {
-        for (int number: numbers) {
+        for (int number : numbers) {
             if (number < MIN_NUMBER || number > MAX_NUMBER) {
                 throw new IllegalArgumentException(
                         "[ERROR] 로또 번호는 " + MIN_NUMBER + "부터 " + MAX_NUMBER + " 사이의 숫자여야 합니다.");
@@ -58,7 +58,7 @@ public class Lotto {
 
     private void validateDuplicate(List<Integer> numbers) {
         Set<Integer> uniqueNumbers = new HashSet<>();
-        for (int number: numbers) {
+        for (int number : numbers) {
             if (uniqueNumbers.contains(number)) {
                 throw new IllegalArgumentException("[ERROR] 당첨 번호는 중복될 수 없습니다.");
             }
